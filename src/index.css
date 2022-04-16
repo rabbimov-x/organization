@@ -1,32 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,600;1,100;1,200&family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 body {
   overflow-x: hidden;
   margin: 0;
   padding: auto 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  
 
   overflow-x: hidden;
 
 
 }
-.App{
+/* .App{
   padding: 50px;
+} */
+.titleoposite{
+ opacity: 0.6;
+}
+.letter{
+letter-spacing: 2px;
+text-transform: uppercase;
 }
 
 * {
   box-sizing: border-box;
-  
-
 }
 
 
 :root {
   --cl-balck: #000000;
   --shade-1: #FFFFFF;
-  --shade-2: #70C174;
+  --shade-2: #F2F6FC;
   --shade-3: #BEF3C0;
   --shade-4: #EFF7F2;
   --shade-5: #E5E5E5 ;
@@ -40,8 +43,9 @@ body {
   --rating: #FDCC0D;
   --danger:#F44336;
   --warning: #FBC02D;
-  --success:#55B559;
+  --success: #70C174;
   --info:#03A9F4;
+  --tr: transparent;
   --gradient:linear-gradient(225deg, #192038 0%, #2E3A59 100%);
 
 
@@ -51,7 +55,9 @@ body {
   --size12: 12px;
   --size14: 14px;
   --size18: 18px;
+  --size16: 16px;
   --size20: 20px;
+  --size24: 24px;
   --size28: 28px;
   --size48: 48px;
   --size56: 56px;
@@ -61,13 +67,11 @@ body {
   --icon-w14: 14px;
   --icon-w12: 12px;
   --icon-w20: 20px;
+  --icon-w22: 22px;
   --icon-w24: 24px;
   
   /* ============= MARGIN vs PADDING PX  ================ */
-  --mp30: 30px;
-  --mp15: 15px;
-  --mp10: 10px;
-  --mp5: 5px;
+  --btn: 16px 32px;
 
   /* ========== FONT FAMILY ============= */
   --family: "Montserrat", sans-serif;
@@ -77,24 +81,47 @@ body {
   /* ============= DISPLAY ================== */
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1900px) {
   :root {
-  --size12: 14px;
-  --size14: 16px;
-  --size18: 20px;
-  --size20: 22px;
-  --size28: 30px;
-  --size48: 50px;
-  --size56: 56px;
-  --size64: 64px;
+  --size12: 16px;
+  --size14: 20px;
+  --size16: 22px;
+  --size18: 24px;
+  --size20: 26px;
+  --size24: 30px;
+  --size28: 34px;
+  --size48: 54px;
+  --size56: 58px;
+  --size64: 66px;
+  --btn: 16px 32px;
   /* =============  ICONS width============== */
   --icon-w18: 20px;
   --icon-w14: 16px;
   --icon-w12: 14px;
   --icon-w20: 22px;
   --icon-w24: 26px;
-  
-  
+
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+  --size12: 16px;
+  --size14: 18px;
+  --size16: 20px;
+  --size18: 22px;
+  --size20: 24px;
+  --size24: 28px;
+  --size28: 32px;
+  --size48: 52px;
+  --size56: 58px;
+  --size64: 66px;
+  /* =============  ICONS width============== */
+  --icon-w18: 20px;
+  --icon-w14: 16px;
+  --icon-w12: 14px;
+  --icon-w20: 22px;
+  --icon-w24: 26px;
+  --btn: 15px 30px;
   }
 }
 
@@ -102,48 +129,57 @@ body {
   :root {  
     --size12: 12px;
     --size14: 14px;
+    --size16: 15px;
     --size18: 17px;
     --size20: 19px;
+    --size24: 22px;
     --size28: 26px;
-    --size48: 44px;
-    --size56: 52px;
-    --size64: 60px;
+    --size48: 40px;
+    --size56: 48px;
+    --size64: 58px;
+    --btn: 14px 28px;
   }
 }
 @media (max-width: 992px) {
   :root {
     --size12: 12px;
     --size14: 13px;
+    --size16: 15px;
     --size18: 16px;
     --size20: 17px;
+    --size24: 20px;
     --size28: 25px;
-    --size48: 45px;
-    --size56: 50px;
-    --size64: 58px;
+    --size48: 38px;
+    --size56: 44px;
+    --size64: 52px;
     /* =============  ICONS width============== */
   --icon-w18: 17px;
   --icon-w14: 13px;
   --icon-w12: 11px;
   --icon-w20: 18px;
   --icon-w24: 22px;
+  --btn: 12px 26px;
   }
 }
 @media (max-width: 767px) {
   :root {
     --size12: 11px;
     --size14: 12px;
+    --size16: 13px;
     --size18: 13px;
     --size20: 14px;
+    --size24: 18px;
     --size28: 20px;
-    --size48: 40px;
-    --size56: 45px;
-    --size64: 52px;
+    --size48: 35px;
+    --size56: 40px;
+    --size64: 45px;
     /* =============  ICONS width============== */
   --icon-w18: 16px;
   --icon-w14: 12px;
   --icon-w12: 10px;
   --icon-w20: 17px;
   --icon-w24: 20px;
+  --btn: 10px 24px;
   }
 }
 
@@ -151,17 +187,20 @@ body {
   :root {
     --size12: 10px;
     --size14: 11px;
+    --size16: 12px;
     --size18: 12px;
     --size20: 13px;
+    --size24: 16px;
     --size28: 18px;
-    --size48: 35px;
-    --size56: 40px;
-    --size64: 45px;
+    --size48: 24px;
+    --size56: 28px;
+    --size64: 32px;
     /* =============  ICONS width============== */
   --icon-w18: 14px;
   --icon-w14: 10px;
   --icon-w12: 9px;
   --icon-w20: 15px;
   --icon-w24: 18px;
+  --btn: 8px 20px;
   }
 }

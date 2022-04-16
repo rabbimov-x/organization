@@ -8,6 +8,7 @@ const   initiallState = {
     loader: false,
     modal: false,
     colorbg: "--cl-home-d1",
+    buttonClick: false,
 } 
 
 export const updateReduser =( state = initiallState , action )=>{

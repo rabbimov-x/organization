@@ -1,6 +1,10 @@
 import styled ,{ createGlobalStyle , css } from "styled-components";
-// import {ReactComponent as svg1} from './icons/Account.svg'
-
+import {styled as sty} from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
+import {ReactComponent as svg1} from './icons/Negative.svg'
+import TwitterIcon from '@mui/icons-material/Twitter';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 // const btncolor = (bg)=>{
 //     switch(bg){
@@ -26,7 +30,7 @@ position: ${({position})=>position? position : `relative`};
 display: ${({display})=>display ? display : "block"};
 flex-direction: ${({flex})=> flex? flex : "none"}; 
 flex-wrap: ${({nowrap})=> nowrap? "nowrap" : "wrap"};
- justify-content: ${({justify})=>justify? justify: "left" }; 
+justify-content: ${({justify})=>justify? justify: "left" }; 
 align-items: ${({align})=>align? align: "" };
 text-align: ${({textC})=>textC? textC : "left"};
 padding: ${({pd})=>pd? pd : "0"};
@@ -40,7 +44,7 @@ font-weight: ${({bold})=> bold ? bold : "700"};
 padding: ${({pd})=>pd? pd : "0"};
 margin: ${({mr})=>mr? mr : "0"};
 display: ${({display})=>display ? display : "block"};
-line-height: 140%;
+line-height: 120%;
 `
 
 export const  GlobalStyle = createGlobalStyle`
@@ -64,15 +68,22 @@ text-transform: uppercase;
 text-shadow: -1.51px 2.26px 0.75px rgba(0, 0, 0, 0.1);
 `
 
+export const A = styled.a`
+${allCommon}
+width: ${({w})=>w? w : `fit-content`};
+height: ${({h})=>h? h :`fit-content`};
+text-decoration: none;
+`
 
 export const P = styled.p`
 ${font}
 width: ${({w})=> w ? w : "" };
-line-height: 120%;
+line-height: ${({line})=> line ? line : "160%" };
 font-style: normal;
-color : ${({cl})=>cl ? `var(${cl})` : "var(--cl-white)"};
-text-shadow: ${({tSh})=> tSh ? "-1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1)" : "-1.51px 2.26px 0.75px rgba(0, 0, 0, 0.1)"};
-filter: ${({fSh})=> fSh ? "drop-shadow(-4.51px 2.26px 0.75px rgba(0, 0, 0, 0.15))" : "none"};
+color : ${({cl})=>cl ? `var(${cl})` : "var(--shade-1)"};
+flex: none;
+order: 0;
+flex-grow: 0;
 `
 
 export const Container = styled.div`
@@ -100,9 +111,19 @@ export const Col8 = styled(Col12)`
 `
 export const Col6 = styled(Col12)`
     width: 50%;
+    @media (max-width: 956px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `
 export const Col4 = styled(Col12)`
     width: 33.333%;
+    @media (max-width: 956px) {
+        width: 40%;
+    }
     @media (max-width: 757px) {
         width: 50%;
     }
@@ -119,7 +140,7 @@ export const Col3  = styled(Col12)`
     }
     @media (max-width: 576px) {
         width: 50%;
-        margin: 0 auto;
+        margin: 0 auto !important;
         padding : 0 auto ;
     }
     
@@ -132,28 +153,51 @@ right: ${({right})=>right? right : ""};
 bottom: ${({bottom})=>bottom? bottom : ""};
 -webkit-box-align: none;
 `
-export const Button  = styled.button`
-border: none;
-outline: none;
-padding: ${({pd})=>pd? pd : "16px 32px"};
+
+export const Buttons  = sty(LoadingButton)`
+height: fit-content;
+width: fit-content;
+min-width: 0px;
+padding: ${({pd})=>pd? pd : "var(--btn)"};
 border-radius: 4px;
 margin: ${({mr})=>mr? mr : "0"};
 background-color:${({bg})=>bg ? `var(${bg})` : "var(--primary)"} ;
 color:${({cl})=>cl? `var(${cl})` : "var(--shade-1)"}; 
-font-family: var(--familyR);
-font-style: normal;
-font-weight: 400;
-font-size:${({size})=>size? `var(${size})` : "var(--siz16)"} ;
-line-height: 140%;
+text-transform:inherit;
+font-weight: 500;
+line-height: 120%;
+font-size:${({size})=>size? `var(${size})` : "var(--siz16)"};
 backdrop-filter: blur(80px);
+&: hover{
+    background-color:${({bg})=>bg ? `var(${bg})` : "var(--primary)"} ;
+}
 @media (max-width: 767px) {
-    padding: 6px 15px;
+    padding: 10px 20px;
 }
 `
-Button.Wish = styled.button`
+Buttons.D = sty(Buttons)`
+         line-height: 120%;
+         border:  'none';
+         width:fit-content;     
+         padding: ${({pd})=>pd? pd : "var(--btn)"};
+         border-radius: 4px;
+         margin: ${({mr})=>mr? mr : "0"};
+         text-transform: uppercase;
+         box-shadow: 0 2px 5px 2px ${({bgimg})=> bgimg ? bgimg === "success" ? '    rgba(85, 239, 196,.3)': bgimg === "primary" ? 'rgba(52, 152, 219,.3)' : bgimg == "dark" ? 'rgba(44, 100, 80,.3)': "" : ""};
+         cursor: pointer;
+         color: #fff;
+         background-size: 200%;
+         transition: 0.4s;
+         &:hover{
+             background-position: right;
+         }
+         z-index: 1;    
+         background-image: ${({bgimg})=> bgimg ? bgimg === "success" ? 'linear-gradient(45deg, var(--success) , var(--success), #16a085 )': bgimg === "primary" ? 'linear-gradient(135deg, var(--primary) , #2980b9, #9b59b6 )' : bgimg == "dark" ? 'linear-gradient(45deg, var(--shade-8) , #303952, #130f40 )': "none" : "blue"}  ;
+`
+Buttons.Wish = styled.button`
 ${font}
-width: 48px;
-height: 48px;
+width: 38px;
+height:38px;
 position: relative;
 display: flex;
 justify-content: center;
@@ -164,35 +208,13 @@ background: #FFFFFF;
 border-radius: 50%;
 background-color: var(--shade-1);
 box-shadow: 0px 4px 8px rgba(25, 32, 56, 0.16);
-& .numberBtn{
-    content: ${({content})=> content? content : "0"};
-    ${font}
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--size13);
-    border-radius: 50%;
-    background-color: var(--secondary);
-}
-svg{
-        path{
-            fill: var(--shade-6)
-        }
-    }
-&:hover{
-    svg{
-        path{
-            fill: var(--shade-7)
-        }
-    }
+overflow: hidden;
+img{
+    width:120%;
+    height: auto;
 }
 `
-Button.Back = styled(Button.Wish)`
+Buttons.Back = styled(Buttons.Wish)`
 svg{
     path{
         fill: var(--shade-6)
@@ -206,16 +228,6 @@ svg{
     }
 }
 }
-`
-Button.Slider = styled(Button.Wish)`
-width: 16px;
-height: 16px;
-border: 1.5px solid var(--shade-1);
-background-color: var(--shade-1);
-&:hover{
-    background-color: var(--secondary);
-}
-box-shadow: 0px 0px 8px rgba(25, 32, 56, 0.32);
 `
 
 
@@ -248,30 +260,37 @@ export const Icon = styled.div`
 const common = css`
 width: ${({w})=>w? `var(${w})` : `var(--icon-w24)`};
 height: auto;
+font-size:  ${({w})=>w? `var(${w})` : `var(--icon-w24)`}  !important;
 margin: ${({mr})=>mr? mr : "0"};
 display: ${({display})=>display? display : "block" };
  & path{
-     fill: ${({cl})=>cl ? `var(${cl})` : ``};
+     fill: ${({cl})=>cl ? `var(${cl})` : `var(--shade-7)`};
      
  }
 `
 
 export const  Img = styled.div`
 ${allCommon}
+border-radius: ${({br})=>br ? br : ""};
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
 &> img{ 
-    width: 100%;
+    max-width: ${({mx})=>mx ? mx : "100%"};
+    min-width: ${({mn})=>mn ? mn : "100%"};
     height: auto;
 }
 `
-// Icon.Search = styled(svg2)`
-// ${common}
-// `
-// Icon.Cansel  = styled(svg3)`
-// ${common}
-// `
-// Icon.Star = styled(svg4)`
-// ${common}
-// `
+Icon.Twitter = styled(TwitterIcon)`
+${common}
+`
+Icon.Facebook = styled(svg1)`
+${common}
+`
+Icon.Email = styled(MailOutlineIcon)`
+${common}
+`
 // Icon.LikeUmpty = styled(svg5)`
 // ${common}
 // `

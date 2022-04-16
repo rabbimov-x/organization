@@ -1,24 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import createSagaMiddleware from 'redux-saga'
+import * as ReactDOMClient from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
 import App from './App';
-import { ourSaga } from './redux/saga/saga';
+import createSagaMiddleware from 'redux-saga' 
+import { applyMiddleware, compose, createStore } from 'redux';
 import { rootReduser } from './redux/redusers/rootReaduser';
-import "./index.css";
+import './index.css';
+import { ourSaga } from './redux/saga/saga';
+
 
 const sagaMiddleware = createSagaMiddleware()
-  
-const store = createStore(rootReduser,  applyMiddleware(sagaMiddleware))
+const store = createStore(rootReduser, compose( applyMiddleware(sagaMiddleware) ,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+sagaMiddleware.run(ourSaga);
 
-sagaMiddleware.run(ourSaga)
-
-ReactDOM.render(
+const root = ReactDOMClient.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+     <App></App>
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
 );
-
-

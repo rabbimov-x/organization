@@ -1,7 +1,4 @@
 import styled  from "styled-components";
-// import { NavLink   } from "react-router-dom";
-
-
 
 
 
@@ -11,22 +8,35 @@ export const Nav = styled.div`
     width:100%;
     height: auto;
     padding: 0 ;
-    background: #FFF;
-    border-bottom: 2px solid #E4E7ED;
-    border-top: 3px solid #D10024;
+    background: transparent;
     
+    a{
+        color: var(--shade-9) !important;
+    }
+    .login1{
+        display: none;
+    }
     @media (max-width: 768px){
         background-color: var(--cl-dark);
+        .login1{
+            display: block;
+        }
+        .login2{
+            display: none;
+        }
     }
+    
+
 `
 
 export const Ul = styled.ul`
-    width: 100%;
+    width: fit-content;
     display:  flex;
     align-items: center;
     list-style: none;
-    margin: 0;
+    margin: 0 30px 0 auto;
     padding: 0;
+
     @media (max-width: 768px) {
         display: ${({display})=> display?  display :"flex"};
         width: 100vw;
@@ -39,10 +49,11 @@ export const Ul = styled.ul`
 `
 Ul.Li = styled.li`
     width: auto;
-    padding: 20px 0px;
+    padding: 20px 10px;
     margin-left: ${({mr})=>mr? mr : "30px"};
     color: #2B2D42;
     background-color: transparent;
+
     >a{
         text-decoration: none;
         font-family: var(--font-family);
@@ -51,6 +62,8 @@ Ul.Li = styled.li`
         transition: 0.2s color;
         display: flex;
         position: relative;
+        color: #000;
+
         &::before{
             content: "";
             position: absolute;
@@ -58,7 +71,7 @@ Ul.Li = styled.li`
             height: 2px;
             left: 0.1px;
             bottom: -4px;
-            background-color: var(--cl-red);
+            background-color: var(--primary);
             transition: all 0.2s linear;
             
         }
@@ -81,34 +94,61 @@ Ul.Li = styled.li`
             width: 99%;
         }
     }
+
     @media (max-width: 768px){
         >.navlink{
         color: var(--cl-white);
         z-index: 10px;
     }   
     }
+
   
 `
-export const BuuttonUl = styled.button`
-display: ${({display})=> display? display: "block"};
-border:2px solid var(--cl-button);
-outline: none;
-cursor: pointer;
-padding: 6px 14px;
-border-radius: 4px;
-background-color: var(--cl-button);
-margin: 15px 0 15px auto;
-&:active{
-    transform: scale(0.95);
-    background-color: var(--cl-white);
-    &> svg{
-    path{
-        fill: var(--cl-button);
-    }
+// export const BuuttonUl = styled.button`
+// display: ${({display})=> display? display: "block"};
+// border:2px solid var(--cl-button);
+// outline: none;
+// cursor: pointer;
+// padding: 6px 14px;
+// border-radius: 4px;
+// background-color: var(--shade-3);
+// margin: 15px 0 15px auto;
+
+
+
+// &:active{
+//     transform: scale(0.95);
+//     background-color: var(--shade-1);
+//     &> div> svg{
+//     path{
+//         fill: var(--shade-9);
+//     }
     
+// }
+// }
+
+// @media (min-width: 768px) {
+//     display: none;
+// }
+// `
+
+export const Logo = styled.div`
+overflow: hidden;
+width: 10%;
+height: 70px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+&> img{
+    min-width: 120%;
+    max-width: 150%;
 }
-}
-@media (min-width: 768px) {
-    display: none;
+@media (max-width: 767px) {
+    width: 15%;
+    &> img{
+    min-width: 130%;
+    max-width: 150%;
+}   
 }
 `
