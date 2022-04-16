@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const TableStyle = styled.div`
 width: 100%;
 height: 100vw;
-padding: 0 5%;
+padding: 1px 5%;
 overflow-y: auto; 
     &::-webkit-scrollbar{
         width: 5.94px;
