@@ -5,6 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 
 import { AdminStyle, Ul } from "./styled";
 import NavAdmin from "../../components/NavbarAdmin";
+import Tables from "../../components/Table";
 
 const Admin = ()=>{
     return(
@@ -25,6 +26,9 @@ const Admin = ()=>{
             </AdminStyle.Left>
             <AdminStyle.Right >
                <NavAdmin/>
+               <Tables>
+
+               </Tables>
             </AdminStyle.Right>
         </AdminStyle>
     )

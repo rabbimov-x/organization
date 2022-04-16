@@ -195,16 +195,13 @@ Buttons.D = sty(Buttons)`
          background-image: ${({bgimg})=> bgimg ? bgimg === "success" ? 'linear-gradient(45deg, var(--success) , var(--success), #16a085 )': bgimg === "primary" ? 'linear-gradient(135deg, var(--primary) , #2980b9, #9b59b6 )' : bgimg == "dark" ? 'linear-gradient(45deg, var(--shade-8) , #303952, #130f40 )': "none" : "blue"}  ;
 `
 Buttons.Wish = styled.button`
-${font}
 width: 38px;
 height:38px;
-position: relative;
 display: flex;
 justify-content: center;
 align-items: center;
 border: none;
 outline: none;
-background: #FFFFFF;
 border-radius: 50%;
 background-color: var(--shade-1);
 box-shadow: 0px 4px 8px rgba(25, 32, 56, 0.16);
@@ -215,19 +212,10 @@ img{
 }
 `
 Buttons.Back = styled(Buttons.Wish)`
-svg{
-    path{
-        fill: var(--shade-6)
-    }
-}
-&:hover{
-    background-color: var(--secondary);
-svg{
-    path{
-        fill: var(--shade-1)
-    }
-}
-}
+width: 25px;
+height: 25px;
+box-shadow: none;
+margin-right: 5px; 
 `
 
 

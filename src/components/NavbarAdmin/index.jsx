@@ -31,7 +31,7 @@ const NavAdmin = ()=>{
             <Buttons.Wish>
                 <img src="./assets/images/png/logo.jpg" alt="error" />
             </Buttons.Wish>
-            <Buttons bg = "--tr" pd = "10px">
+            <Buttons bg = "--tr" mr = "0 5px" pd = "5px">
               <MoreVertIcon sx={{ color: "var(--shade-9)" }}/>
             </Buttons>
         </Div>

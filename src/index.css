@@ -4,11 +4,31 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: auto 0;
-  
+     
 
   overflow-x: hidden;
 
 
+}
+
+::-webkit-scrollbar{
+  width: 10.94px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #B6D3FF;
+  border-radius: 8px;
+}  
+::-webkit-scrollbar-track{
+  background-color: #F5F7FB;
+  border-radius: 8px;
+  
+}
+
+@media (max-width: 576px) {
+  
+::-webkit-scrollbar{
+  width: 5.94px;
+}
 }
 /* .App{
   padding: 50px;

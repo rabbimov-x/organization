@@ -44,7 +44,7 @@ Ul.Li = styled.li`
     background-color: transparent;
     >a{
         width: 100%;
-        padding: 17px 12px;
+        padding: 13px 12px;
         border-radius: 12px;
         text-decoration: none;
         font-family: var(--font-family);
