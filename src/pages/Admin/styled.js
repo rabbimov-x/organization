@@ -6,7 +6,7 @@ export const AdminStyle = styled.div`
 width: 100%;
 height: auto;
 display: flex;
-background-color: var(--shade-1);
+background-color: var(--shade-5);
 `
 AdminStyle.Left = styled.div`
 width: 235px;
@@ -96,4 +96,5 @@ overflow-y: scroll;
 overflow-x: hidden;
 flex: 1;
 height: 100vh;
+
 `

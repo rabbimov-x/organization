@@ -30,7 +30,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 border: none;
-background-color: transparent;
+background-color: var(--shade-1);
 outline: none;
 position: relative;
 padding:  0 15px;
@@ -44,7 +44,7 @@ svg{
 
 SearchStyle.Input = styled.input`
 flex: 1;
-background-color: transparent;
+background-color: var(--shade-1);
 outline: none;
 padding: 12px 16px;
  border: none;

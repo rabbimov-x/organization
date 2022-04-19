@@ -51,8 +51,8 @@ text-transform: uppercase;
   --shade-1: #FFFFFF;
   --shade-2: #F2F6FC;
   --shade-3: #BEF3C0;
-  --shade-4: #EFF7F2;
-  --shade-5: #E5E5E5 ;
+  --shade-4: #F8F8F8;
+  --shade-5: #F3F7FD;
   --shade-6: #EBF0F9;
   --shade-7: #525560;
   --shade-8: #1D2130;
@@ -61,10 +61,11 @@ text-transform: uppercase;
   --secondary: #14CC9E;
   --Gprimary: #EFF7F2;
   --rating: #FDCC0D;
-  --danger:#F44336;
+  --danger:#FF001C;
   --warning: #FBC02D;
   --success: #70C174;
   --info:#03A9F4;
+  --info-dark: #015588;
   --tr: transparent;
   --gradient:linear-gradient(225deg, #192038 0%, #2E3A59 100%);
 
@@ -74,6 +75,7 @@ text-transform: uppercase;
   /* ============  FONT SIZE  =============== */
   --size12: 12px;
   --size14: 14px;
+  --size15: 15px;
   --size18: 18px;
   --size16: 16px;
   --size20: 20px;
@@ -105,6 +107,7 @@ text-transform: uppercase;
   :root {
   --size12: 16px;
   --size14: 20px;
+  --size15: 20px;
   --size16: 22px;
   --size18: 24px;
   --size20: 26px;
@@ -126,7 +129,8 @@ text-transform: uppercase;
 @media (min-width: 1440px) {
   :root {
   --size12: 16px;
-  --size14: 18px;
+  --size14: 16px;
+  --size15: 16px;
   --size16: 20px;
   --size18: 22px;
   --size20: 24px;
@@ -149,7 +153,8 @@ text-transform: uppercase;
   :root {  
     --size12: 12px;
     --size14: 14px;
-    --size16: 15px;
+    --size15: 15px;
+    --size16: 16px;
     --size18: 17px;
     --size20: 19px;
     --size24: 22px;
@@ -164,6 +169,7 @@ text-transform: uppercase;
   :root {
     --size12: 12px;
     --size14: 13px;
+    --size15: 14px;
     --size16: 15px;
     --size18: 16px;
     --size20: 17px;
@@ -183,8 +189,9 @@ text-transform: uppercase;
 }
 @media (max-width: 767px) {
   :root {
-    --size12: 11px;
-    --size14: 12px;
+    --size12: 10px;
+    --size14: 11px;
+    --size15: 12px;
     --size16: 13px;
     --size18: 13px;
     --size20: 14px;
@@ -205,8 +212,9 @@ text-transform: uppercase;
 
 @media (max-width: 576px) {
   :root {
-    --size12: 10px;
-    --size14: 11px;
+    --size12: 9px;
+    --size14: 9px;
+    --size15: 10px;
     --size16: 12px;
     --size18: 12px;
     --size20: 13px;
